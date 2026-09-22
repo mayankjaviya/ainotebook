@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Notebook",
+  "version": "1.0.0",
+  "description": "Chat with your personal assistant from any tab, and remember the page you are on.",
+  "permissions": [
+    "sidePanel",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "alarms",
+    "notifications"
+  ],
+  "action": {
+    "default_title": "Open Notebook",
+    "default_icon": "icon.png"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "open-panel": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+M",
+        "mac": "Command+Shift+M"
+      },
+      "description": "Open Notebook"
+    }
+  },
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost/tools/notebook/*"
+  ],
+  "icons": {
+    "128": "icon.png"
+  }
+}

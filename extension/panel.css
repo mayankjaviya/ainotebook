@@ -1,0 +1,69 @@
+:root {
+    --bg: #FAF9F5;
+    --sidebar: #F0EEE6;
+    --text: #141413;
+    --muted: #6B6A63;
+    --border: #E5E4DF;
+    --accent: #D97757;
+    --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body { display: flex; flex-direction: column; position: relative; }
+
+.chip {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    background: var(--sidebar);
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
+.chip-dot {
+    width: 6px; height: 6px; flex: 0 0 auto;
+    border-radius: 50%; background: var(--accent); opacity: 0.5;
+    transition: opacity 150ms;
+}
+.chip.has-page .chip-dot { opacity: 1; }
+.chip-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.app { flex: 1 1 auto; width: 100%; border: 0; }
+
+/* Overlays, never in flow: an in-flow block here steals height from the iframe
+   and clips the chat's input box. */
+.loading, .offline {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    padding: 60px 16px 0;
+    background: var(--bg);
+    color: var(--muted);
+    z-index: 2;
+}
+.offline-title { color: var(--text); font-weight: 600; margin: 0 0 6px; }
+.offline-body { margin: 0 0 14px; }
+code { background: rgba(0,0,0,0.05); padding: 1px 5px; border-radius: 4px; }
+
+.btn {
+    padding: 8px 14px;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 150ms;
+}
+.btn:hover { background: #C96A4B; }

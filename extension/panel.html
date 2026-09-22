@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Notebook</title>
+<link rel="stylesheet" href="panel.css">
+</head>
+<body>
+    <header class="chip" id="chip" title="">
+        <span class="chip-dot"></span>
+        <span class="chip-text" id="chip-text">No page</span>
+    </header>
+
+    <iframe id="app" class="app"
+            src="http://localhost/tools/notebook/?page=chat&embed=1"></iframe>
+
+    <div class="offline" id="offline" hidden>
+        <p class="offline-title">Can't reach Notebook</p>
+        <p class="offline-body">Is XAMPP running? The app should answer at
+            <code>localhost/tools/notebook</code>.</p>
+        <button class="btn" id="retry" type="button">Retry</button>
+    </div>
+
+    <div class="loading" id="loading">Connecting…</div>
+
+    <script src="panel.js"></script>
+</body>
+</html>

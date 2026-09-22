@@ -1,0 +1,10 @@
+# Personal data - never publish.
+# Holds the OpenRouter API key, saved secrets, chat history and reminders.
+data/*
+!data/.htaccess
+
+# Internal design and planning notes
+docs/
+
+# macOS
+.DS_Store
